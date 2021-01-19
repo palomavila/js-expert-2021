@@ -6,13 +6,13 @@ const Util = require('./util')
 const GENDER = {
   male: 'male',
   female: 'female',
-};
+}
 
 {
   const employee = new Employee({
     name: 'Ana',
-    gender: GENDER.female,  
-  });
+    gender: GENDER.female  
+  })
 
   assert.throws(() => employee.birthYear, { message: 'You must define age first!' })
 }
@@ -23,9 +23,9 @@ Date.prototype.getFullYear = () => CURRENT_YEAR;
 {
   const employee = new Employee({
     name: 'Lilo',
-    age: 26
+    age: 26,
     gender: GENDER.male
-  });
+  })
 
   assert.deepStrictEqual(employee.name, 'Mr. Lilo')
   assert.deepStrictEqual(employee.age, undefined)
@@ -55,9 +55,9 @@ Date.prototype.getFullYear = () => CURRENT_YEAR;
 {
   const manager = new Manager({
     name: 'Maya',
-    gender: GENDER.female,
     age: 25,
-  });
+    gender: GENDER.female
+  })
 
     assert.deepStrictEqual(manager.name, "Mr. Juninho")
     assert.deepStrictEqual(manager.gender, undefined)
