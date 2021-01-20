@@ -1,6 +1,6 @@
 (() => {
-  const BTN_REINICIAR = "btnReiniciar";
-  const ID_CONTADOR = "contador";
+  const BTN_REINICIAR = 'btnReiniciar';
+  const ID_CONTADOR = 'contador';
   const VALOR_CONTADOR = 100;
   const PERIODO_INTERVALO = 10;
   
@@ -13,7 +13,7 @@
       const handler = {
         set: (currentContext, propertyKey, newValue) => {
           console.log({currentContext, propertyKey, newValue});
-          // parar todo o processamento
+          // parar o processamento
           if(!currentContext.valor) {
             currentContext.efetuarParada();
           };
@@ -32,18 +32,14 @@
   
     atualizarTexto = ({ elementoContador, contador }) => () => {
       const identificadorTexto = '$$contador';
-      let textoPadrao = `Starting in <strong>${identificadorTexto}</strong> seconds...`;
-    
-      // contador.valor === 0 ? 
-      // elementoContador.innerHTML = textoPadrao = 'Your timer is finished!' :
+      let textoPadrao = `Starting in <strong>${identificadorTexto}</strong> seconds...`
       elementoContador.innerHTML = textoPadrao.replace(identificadorTexto, contador.valor--);
     };
   
     agendarParadaContador({ elementoContador, idIntervalo }) {
-      
       return () => {
         clearInterval(idIntervalo);
-  
+
         elementoContador.innerHTML = "Timer interrupted!";
         this.desabilitarBotao(false);
       };
@@ -57,13 +53,14 @@
   
         if(valor) {
           elementoBotao.setAttribute(atributo, valor) 
-          return
+          return;
         }
         elementoBotao.removeAttribute(atributo);
       };
     };
   
     inicializar() {
+      console.log('uhl iniciou!')
       const elementoContador = document.getElementById(ID_CONTADOR);
       const contador = this.prepararContadorProxy();
       
@@ -75,7 +72,7 @@
       const fn = this.atualizarTexto(argumentos);
       const idIntervalo = setInterval(fn, PERIODO_INTERVALO);
     
-      { //* para desabilitar o botao
+      { //* desabilitar o botao
         const elementoBotao = document.getElementById(BTN_REINICIAR);
         const desabilitarBotao = this.prepararBotao(elementoBotao, this.inicializar);
         desabilitarBotao();
@@ -86,8 +83,8 @@
         contador.efetuarParada = pararContadorFn;
       }
     
-    };
-  };
+    }
+  }
 
   window.ContadorComponente = ContadorComponente; 
   
