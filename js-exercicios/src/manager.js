@@ -1,15 +1,19 @@
-const Employee = require("./Employee")
-const Util = require("./util")
+const Employee = require("./employee");
+const Util = require("./util");
 
 class Manager extends Employee {
-    #bonuses = 2000
+    #bonuses = 2000;
+    
     get bonuses() {
-        return Util.formatCurrency(this.#bonuses)
+        return Util.formatCurrency(this.#bonuses);
     }
+                                   
     get netPay() {
-        const finalValue = Util.unFormatCurrency(super.netPay) + Util.unFormatCurrency(this.bonuses)
-        return Util.formatCurrency(finalValue)
+        const finalValue = 
+        Util.unFormatCurrency(super.netPay) + Util.unFormatCurrency(this.bonuses);
+        
+        return Util.formatCurrency(finalValue);
     }
 }
 
-module.exports = Manager
+module.exports = Manager;
