@@ -4,7 +4,7 @@
   const VALOR_CONTADOR = 100;
   const PERIODO_INTERVALO = 10;
   
-  class ContadorComponente {
+  class ContadorComponent {
     constructor() {
       this.inicializar();
     };
@@ -86,6 +86,6 @@
     }
   }
 
-  window.ContadorComponente = ContadorComponente; 
+  window.ContadorComponent = ContadorComponent; 
   
 })();
