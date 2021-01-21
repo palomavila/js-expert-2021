@@ -1,11 +1,11 @@
 class TodoService {
-  constructor({ todoRepository }) {
+   constructor({ todoRepository }) {
     this.todoRepository = todoRepository;
   }
 
   create(todoItem) {
-    if (!todoItem.isValid()) {
-      return {
+     if (!todoItem.isValid()) {
+       return {
         error: {
           message: 'invalid data',
           data: todoItem,
@@ -26,9 +26,8 @@ class TodoService {
   }
 
   list(query) {
-    return this.todoRepository
-      .list()
-      .map(({ meta, $loki, ...result }) => result);
+        return this.todoRepository.list(query)
+            .map(({ meta, $loki, ...data }) => data)
   }
 }
 
