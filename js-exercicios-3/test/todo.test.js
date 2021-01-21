@@ -52,9 +52,7 @@ describe('todo', () => {
       };
 
       const result = todo.isValid();
-
       expect(result).to.be.ok;
-
       expect(uuid.v4.calledOnce).to.be.ok;
       expect(todo).to.be.deep.equal(expectedItem);
     });
