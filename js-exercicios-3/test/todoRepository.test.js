@@ -17,21 +17,19 @@ describe('todoRepository', () => {
 
   describe('methods signature', () => {
    it('should call inserOne from lokijs', () => {
-        
-           const functionName = "insertOne"
-           
-          sandbox.stub(
-                todoRepository.schedule,
-                functionName,
-            ).returns(true)
-        },
-      ];
-      
-
+       const mockDatabase = [
+                {
+                    name: 'LILO ',
+                    age: 30,
+                    meta: { revision: 0, created: 1611185653507, version: 0 },
+                    '$loki': 1
+                };
+            ] 
+          
       const functionName = 'find';
       const expectedReturn = mockDataBase;
-      sandBox
-        .stub(todoRepository.schedule, functionName)
+      
+        sandbox.stub(todoRepository.schedule, functionName)
         .returns(expectedReturn);
 
       const result = todoRepository.list();
