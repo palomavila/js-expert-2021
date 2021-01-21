@@ -12,7 +12,7 @@ describe('todo', () => {
   afterEach(() => sandBox.restore());
 
   describe('#isValid', () => {
-    it('should return invalid when creating an object without text', () => {
+    it ('should return invalid when created an object without text', () => {
       const data = {
         text: '',
         when: new Date('2020-12-01'),
@@ -22,7 +22,7 @@ describe('todo', () => {
 
       expect(result).to.be.not.ok;
     });
-    it('should return invalid when creating an object using the "when" property invalid', () => {
+    it('should return invalid while created an object using "when" property by mistake', () => {
       const data = {
         text: 'Hello World',
         when: new Date('20-12-01'),
@@ -32,7 +32,7 @@ describe('todo', () => {
 
       expect(result).to.be.not.ok;
     });
-    it('should have "id", "text", "when" and "status" properties after creating object', () => {
+    it('missing "id", "text", "when" and "status" properties after created the object', () => {
       const data = {
         text: 'Hello World',
         when: new Date('2020-12-01'),
