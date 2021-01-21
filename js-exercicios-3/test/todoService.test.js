@@ -98,7 +98,7 @@ describe('todoService', () => {
 
         });
 
-        it('shoudl save todo item with pending status', () => {
+        it('should save todo item with pending status', () => {
             const properties = { 
                 text: 'I must walk my dog',
                 when: new Date("2020-12-10 12:00:00 GMT-0")
