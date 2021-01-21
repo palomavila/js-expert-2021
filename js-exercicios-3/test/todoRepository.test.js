@@ -52,4 +52,3 @@ describe('todoRepository', () => {
       expect(todoRepository.schedule[functionName].calledOnceWithExactly(data)).to.be.ok;
     });
   });
-});
