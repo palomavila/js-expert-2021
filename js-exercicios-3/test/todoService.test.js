@@ -1,4 +1,3 @@
-
 const { describe, it, before, afterEach, } = require('mocha')
 const { expect } = require('chai')
 const TodoService = require('../src/todoService')
@@ -27,8 +26,8 @@ describe('todoService', () => {
             const dependencies = {
                 todoRepository: {
                     list: sandbox.stub().returns(mockDatabase)
-                }
-            }
+                };
+            };
 
             todoService = new TodoService(dependencies)
         });
@@ -48,11 +47,11 @@ describe('todoService', () => {
             const dependencies = {
                 todoRepository: {
                     create: sandbox.stub().returns(true)
-                }
-            }
+                };
+            };
 
             todoService = new TodoService(dependencies)
-        })
+        });
 
         it('shouldn\'t save todo item with invalid data', () => {
             const data = new Todo({
@@ -64,8 +63,8 @@ describe('todoService', () => {
                 error: {
                     message: 'invalid data',
                     data: data
-                }
-            }
+                };
+            };
             const result = todoService.create(data)
             expect(result).to.be.deep.equal(expected)
 
@@ -74,7 +73,7 @@ describe('todoService', () => {
                 const properties = { 
                     text: 'I must walk my dog',
                     when: new Date("2020-12-01 12:00:00 GMT-0")
-                }
+                };
                 const expectedId = '000001'
                 
                 const uuid = require('uuid') 
@@ -91,7 +90,7 @@ describe('todoService', () => {
                 const expectedCallWith = {
                     ...data,
                     status: "late"
-                }
+                };
 
                 expect(todoService.todoRepository.create.calledOnceWithExactly(expectedCallWith)).to.be.ok
 
@@ -103,7 +102,8 @@ describe('todoService', () => {
             const properties = { 
                 text: 'I must walk my dog',
                 when: new Date("2020-12-10 12:00:00 GMT-0")
-            }
+           
+          };
             const expectedId = '000001'
             
             const uuid = require('uuid') 
@@ -120,7 +120,7 @@ describe('todoService', () => {
             const expectedCallWith = {
                 ...data,
                 status: "pending"
-            }
+            };
 
             expect(todoService.todoRepository.create.calledOnceWithExactly(expectedCallWith)).to.be.ok
     });
