@@ -36,6 +36,7 @@ describe('todoRepository', () => {
       expect(result).to.be.deep.equal(expectedReturn);
       expect(todoRepository.schedule[functionName].calledOnce).to.be.ok;
     });
+
     it('should call insertOne from lokijs', () => {
       const functionName = 'insertOne';
       const expectedReturn = true;
