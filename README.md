@@ -6,7 +6,7 @@ Para fixação entre os dias 18 e 22 de Janeiro foram realizadas lives para fixa
 - [Dia 1](https://github.com/palomavila/js-expert-2021/tree/main/js-exercicios/src).
 - [Dia 2](https://github.com/palomavila/js-expert-2021/tree/main/js-exercicios-2).
 - [Dia 3](https://github.com/palomavila/js-expert-2021/tree/main/js-exercicios-3).
-
+- [Dia 4](https://github.com/palomavila/js-expert-2021/tree/main/js-exercicios-4).
 
 ## 💻Projeto:
 Este projeto possui algumas referências as quais irei citar abaixo:
