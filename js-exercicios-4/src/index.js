@@ -1,7 +1,7 @@
 const Request = require('./request');
 const request = new Request();
 async function scheduler() {
-  console.log('Starting in...', new Date().toISOString());
+  console.log('starting in...', new Date().toISOString());
   const requests = [
     { url: 'https://www.mercadobitcoin.net/api/BTC/ticker/' },
     { url: 'https://www.NAO_EXISTE.net' },
