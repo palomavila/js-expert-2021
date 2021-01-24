@@ -76,4 +76,4 @@ describe('Requet helpers', () {
 
     })
 
-});
+})
