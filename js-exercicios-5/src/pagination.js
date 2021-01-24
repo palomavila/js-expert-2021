@@ -1,4 +1,3 @@
-
 const Request = require("./request")
 
 const DEFAULT_OPTIONS = {
@@ -45,7 +44,7 @@ class Pagination {
         return new Promise(r => setTimeout(r, ms))
     }
 
-   //** async * getPaginated({ url, page }) {
+   async * getPaginated({ url, page }) {
 
         const result = await this.handleRequest({ url, page })
         const lastId = result[result.length - 1]?.tid ?? 0
@@ -55,7 +54,7 @@ class Pagination {
 
         yield result
         await Pagination.sleep(this.threshold)
-        yield* this.getPaginated({ url, page: lastId })/***//
+        yield* this.getPaginated({ url, page: lastId })
 
     }
 }
