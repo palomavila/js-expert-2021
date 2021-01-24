@@ -49,7 +49,6 @@ class Pagination {
         const result = await this.handleRequest({ url, page })
         const lastId = result[result.length - 1]?.tid ?? 0
 
-        // ultimo é por volta de 770K
         if (lastId === 0) return;
 
         yield result
