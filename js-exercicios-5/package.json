@@ -6,7 +6,7 @@
   "scripts": {
     "test:dev": "npx mocha -w --exit test/",
     "test": "npx mocha --parallel test/",
-    "test:cov": "npx nyc --check-coverage --instrument --reporter=html --reporter=text mocha test",
+    "test:cov": "npx nyc --check-coverage --instrument --reporter=html --reporter=text npm test",
     "start": "node src/"
   },
   "keywords": [],
