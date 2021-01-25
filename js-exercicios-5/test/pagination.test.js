@@ -26,7 +26,7 @@ describe('Pagination tests', () => {
 
         describe('#handleRequest', () => {
 
-            it('should retry an request twice before throing an exception and validate request params and flow', async () => {
+            it('should retry an request twice before throwing an exception and validate request params and flow', async () => {
                 const expectedCallCount = 2
                 const expectedTimeout = 10
 
